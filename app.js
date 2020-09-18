@@ -1,7 +1,11 @@
 var express = require("express");
 var app = express();
+var EmojiConvertor = require('emoji-js');
+
+var emoji = new EmojiConvertor();
 
 app.get("/", function(req, res){
+	console.log(emoji.replace_colons("Hello :smile:"));
 	res.render("home.ejs");
 });
 
